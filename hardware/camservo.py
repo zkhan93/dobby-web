@@ -16,7 +16,7 @@ class H_POS(object):
     left = 'left'
 
 
-class Neck(object):
+class Camservo(object):
 
     def __init__(self, pan, tilt):
         self.pan = int(pan)
@@ -48,7 +48,7 @@ class Neck(object):
             self.tiltpwm.stop()
             GPIO.cleanup()
         except Exception as ex:
-            print 'error cleaning up neck', str(ex)
+            print 'error cleaning up camservo', str(ex)
 
     def up(self):
         self._setdutycycle(self.tilt, self.tiltpwm, 5)

@@ -2,7 +2,7 @@ from config import REDISTOGO_URL
 import redis
 from rq import Worker, Queue, Connection
 
-listen = ['high', 'default', 'low']
+listen = ['process', 'cancel']
 
 conn = redis.from_url(REDISTOGO_URL)
 

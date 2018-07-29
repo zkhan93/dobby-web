@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 
-class Path(object):
+class Ultrasonic(object):
 
     def __init__(self, trig, echo):
         self.trig = int(trig)

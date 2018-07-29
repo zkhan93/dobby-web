@@ -1,8 +1,8 @@
 from flask import Flask
 from flask_rq2 import RQ
-from wheels import Wheels  # DON'T REMOVE
-from neck import Neck  # DON'T REMOVE
-from path import Path  # DON'T REMOVE
+from hardware.wheels import Wheels  # DON'T REMOVE
+from hardware.camservo import Camservo  # DON'T REMOVE
+from hardware.sensors.ultrasonic import Ultrasonic  # DON'T REMOVE
 import jobs  # DON'T REMOVE
 
 
