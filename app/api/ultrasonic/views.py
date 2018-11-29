@@ -1,6 +1,5 @@
 from flask import Blueprint, jsonify
-from app import Ultrasonic
-import app
+from app import Ultrasonic, app
 
 path = Blueprint('path_api_app', __name__, url_prefix='/api/path')
 

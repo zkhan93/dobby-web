@@ -1,7 +1,6 @@
 from flask import Blueprint, jsonify
-from app import Wheels
+from app import Wheels, app
 from app.jobs.wheel_job import continious_movement
-import app
 
 wheels = Blueprint('wheels_api_app', __name__, url_prefix='/api/wheels')
 gpio_pins = app.config.get('WHEEL_GPIO')

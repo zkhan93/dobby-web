@@ -1,6 +1,5 @@
 from flask import Blueprint, jsonify
-from app import Camservo
-import app
+from app import Camservo, app
 
 cam = Blueprint('cam_api_app', __name__, url_prefix='/api/cam')
 

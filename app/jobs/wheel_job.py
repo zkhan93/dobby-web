@@ -1,5 +1,4 @@
-from app import rq, Wheels
-import app
+from app import app, rq, Wheels
 
 max_duration = 10
 gpio_pins = app.config.get('WHEEL_GPIO')
