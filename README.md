@@ -22,13 +22,13 @@ ExecStop=/bin/kill -s TERM $MAINPID
 WantedBy=multi-user.target
 ```
 #### Nginx config
-location: /etc/nginx/sites-enabled/dobby.conf
+location: /etc/nginx/sites-available/dobby.conf -> /etc/nginx/sites-enabled/dobby.conf
 ```
 server { 
         listen 8080;
 
         # path for static files
-	root /home/pi/dobby-web/app/static;
+	root /home/pi/dobby-web/web/static;
 
 	location / {
 		try_files $uri /html/$uri.html /404;
