@@ -33,17 +33,21 @@ class Wheels(object):
         GPIO.output(self.wheels_right.back, False)
         GPIO.output(self.wheels_left.back, False)
 
-    def turn_right(self, sec=1.5):
+    def turn_right(self, sec=1):
         ''' signal both set of wheels to move back for time seconds '''
-        GPIO.output(self.wheels_right.forward, True)
-        time.sleep(sec)
-        GPIO.output(self.wheels_right.forward, False)
-
-    def turn_left(self, sec=1.5):
-        ''' signal both set of wheels to move back for time seconds '''
+        GPIO.output(self.wheels_right.back, True)
         GPIO.output(self.wheels_left.forward, True)
         time.sleep(sec)
+        GPIO.output(self.wheels_right.back, False)
         GPIO.output(self.wheels_left.forward, False)
+
+    def turn_left(self, sec=1):
+        ''' signal both set of wheels to move back for time seconds '''
+        GPIO.output(self.wheels_left.back, True)
+        GPIO.output(self.wheels_right.forward, True)
+        time.sleep(sec)
+        GPIO.output(self.wheels_left.back, False)
+        GPIO.output(self.wheels_right.forward, False)
 
     def turn_half_left(self):
         self.turn_left(0.5)

@@ -22,17 +22,17 @@ def forward(secs=1.0):
     return jsonify(dict(res='success'))
 
 
-@wheels.route('/right', defaults={'secs': 1.0})
+@wheels.route('/right', defaults={'secs': 0.5})
 @wheels.route('/right/<float:secs>')
-def right(secs=1.0):
+def right(secs=0.5):
     with Wheels(*gpio_pins) as w:
         w.turn_left(secs)
     return jsonify(dict(res='success'))
 
 
-@wheels.route('/left', defaults={'secs': 1.0})
+@wheels.route('/left', defaults={'secs': 0.5})
 @wheels.route('/left/<float:secs>')
-def left(secs=1.0):
+def left(secs=0.5):
     with Wheels(*gpio_pins) as w:
         w.turn_right(secs)
     return jsonify(dict(res='success'))

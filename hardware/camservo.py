@@ -32,7 +32,8 @@ class Camservo(object):
         GPIO.setup(self.pan, GPIO.OUT)
         GPIO.setup(self.tilt, GPIO.OUT)
 
-        self.sleeptime = 1  # secs
+        # sleeptime required for harware to move
+        self.sleeptime = 0.5  # secs
         freq = 50
         self.panpwm = GPIO.PWM(self.pan, freq)
         self.tiltpwm = GPIO.PWM(self.tilt, freq)
@@ -51,22 +52,22 @@ class Camservo(object):
             print 'error cleaning up camservo', str(ex)
 
     def up(self):
-        self._setdutycycle(self.tilt, self.tiltpwm, 5)
+        self._setdutycycle(self.tilt, self.tiltpwm, 4.5)
+
+    def vcenter(self):
+        self._setdutycycle(self.tilt, self.tiltpwm, 7.5)
 
     def down(self):
         self._setdutycycle(self.tilt, self.tiltpwm, 9)
 
-    def vcenter(self):
-        self._setdutycycle(self.tilt, self.tiltpwm, 7)
-
     def right(self):
-        self._setdutycycle(self.pan, self.panpwm, 6)
+        self._setdutycycle(self.pan, self.panpwm, 3) # 6
 
     def hcenter(self):
-        self._setdutycycle(self.pan, self.panpwm, 8)
+        self._setdutycycle(self.pan, self.panpwm, 7) # 8
 
     def left(self):
-        self._setdutycycle(self.pan, self.panpwm, 10)
+        self._setdutycycle(self.pan, self.panpwm, 12) # 10
 
     def _move(self, vertical, horizontal):
         if vertical not in ('up', 'down', 'vcenter'):
