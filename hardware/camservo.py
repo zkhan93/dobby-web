@@ -49,7 +49,7 @@ class Camservo(object):
             self.tiltpwm.stop()
             GPIO.cleanup()
         except Exception as ex:
-            print 'error cleaning up camservo', str(ex)
+            print('error cleaning up camservo', str(ex))
 
     def up(self):
         self._setdutycycle(self.tilt, self.tiltpwm, 4.5)

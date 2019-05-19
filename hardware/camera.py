@@ -24,7 +24,7 @@ class Camera(object):
             if self.camera:
                 self.camera.close()
         except Exception as ex:
-            print 'Error closing eyes', str(ex)
+            print('Error closing eyes', str(ex))
 
     def get_frame(self, save=False):
         img = next(self.imageStream)

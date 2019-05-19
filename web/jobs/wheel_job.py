@@ -1,7 +1,8 @@
-from app import app, rq, Wheels
+from web import rq, Wheels
+from config import WHEEL_GPIO
 
+gpio_pins = WHEEL_GPIO
 max_duration = 10
-gpio_pins = app.config.get('WHEEL_GPIO')
 
 
 @rq.job
@@ -12,4 +13,4 @@ def continious_movement(direction):
             if callable(attr):
                 attr()
             else:
-                print 'no such direction'
+                print('no such direction')

@@ -70,6 +70,6 @@ if __name__ == '__main__':
     with Wheels(35, 36, 37, 38) as wheels:
         moves = (' move_forward turn_right ' * 4).split()
         for move in moves:
-            print move
+            print(move)
             getattr(wheels, move)()
-            print 'done', move
+            print('done', move)
