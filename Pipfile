@@ -11,7 +11,8 @@ flask = "*"
 gunicorn = "*"
 redis = "*"
 jinja2 = "*"
-RPi.GPIO = "*"
+"RPi.GPIO" = "*"
+opencv-contrib-python-headless = "*"
 
 [requires]
 python_version = "3.5"
