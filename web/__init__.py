@@ -1,8 +1,8 @@
 from flask import Flask
 from flask_rq2 import RQ
-from hardware.wheels import Wheels  # DON'T REMOVE
-from hardware.camservo import Camservo  # DON'T REMOVE
-from hardware.sensors.ultrasonic import Ultrasonic  # DON'T REMOVE
+from dobby_hardware.wheels import Wheels  # DON'T REMOVE
+from dobby_hardware.camservo import Camservo  # DON'T REMOVE
+from dobby_hardware.ultrasound import Ultrasonic  # DON'T REMOVE
 
 rq = RQ()
 

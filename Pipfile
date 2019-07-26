@@ -13,6 +13,7 @@ redis = "*"
 jinja2 = "*"
 "RPi.GPIO" = "*"
 opencv-contrib-python-headless = "*"
+dobby-hardware = {editable = true,path = "./../dobby-hardware"}
 
 [requires]
 python_version = "3.5"
